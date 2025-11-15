@@ -62,3 +62,15 @@ File: `maxsum_v3.py`
 | Approach 1 | O(n³) | Straightforward solution using nested loops with sum calculation |
 | Approach 2 | O(n²) | Uses prefix sum array for constant-time sum calculation |
 | Approach 3 | O(n) | Kadane's Algorithm - optimal linear time solution |
+
+---
+
+## Learning Resources
+
+### Course Materials
+- Worksheet 1.pdf
+
+### Video Tutorials from YouTube
+- [Prefix Sum Array and Range Sum Queries](https://youtu.be/xbYr9JOC2Lk?si=pFbJVqrB_M5pnTJx)
+- [Prefix Sum in 4 minutes | LeetCode Pattern](https://youtu.be/yuws7YK0Yng?si=uA0zjOVJNIZbFtwL)
+- [Maximum Subarray (Kadane's Algorithm)](https://youtu.be/hLPkqd60-28?si=hLAhjC1qzmRsOnuV)
