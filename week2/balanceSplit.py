@@ -33,7 +33,7 @@ def solve(i):
         # Update global minimum if this is the best split so far
         if diff < min_diff:
             min_diff = diff
-        return
+        return None
 
     # RECURSIVE CASE
     
