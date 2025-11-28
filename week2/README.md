@@ -1,10 +1,5 @@
 # Week 2: Recursion and Combinatorics
 
-**Author:** Kaung Khant Lin  
-**Student ID:** 6540131  
-**Section:** 542
-
----
 
 ## Overview
 
