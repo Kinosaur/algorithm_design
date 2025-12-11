@@ -18,7 +18,7 @@ def maxVal(i, C):
     global call_count
     call_count += 1
     
-    # Check in MEMO
+    # Check MEMO
     if (i, C) in memo:
         return memo[(i, C)]
     

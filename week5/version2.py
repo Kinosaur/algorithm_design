@@ -2,7 +2,7 @@
 # 6540131
 # 542
 
-# Version 1: Naive Recursive Brute Force
+# Version 2: Recursive Brute Force with Memoization
 import sys
 import time
 sys.setrecursionlimit(2000)
@@ -10,29 +10,32 @@ sys.setrecursionlimit(2000)
 A = input().strip()
 B = input().strip()
 
+memo = {} 
+
 def editDistance(i, j):
+    # CHECK MEMO
+    if (i, j) in memo:
+        return memo[(i, j)]
+    
     # BASE CASES
-    # If A is empty, insert all remaining chars of B
     if i == len(A):
         return len(B) - j
-    
-    # If B is empty, delete all remaining chars of A
     if j == len(B):
         return len(A) - i
 
     # RECURSIVE CASES
-    # Case 1: Match
+    res = 0
     if A[i] == B[j]:
-        return editDistance(i + 1, j + 1)
-    
-    # Case 2: Mismatch
+        res = editDistance(i + 1, j + 1)
     else:
-        # Calculate cost for all 3 options
         insert_cost = 1 + editDistance(i, j + 1)
-        delete_cost = 1 + editDistance(i + 1, j)    
+        delete_cost = 1 + editDistance(i + 1, j)
         sub_cost    = 1 + editDistance(i + 1, j + 1)
-        
-        return min(insert_cost, delete_cost, sub_cost)
+        res = min(insert_cost, delete_cost, sub_cost)
+    
+    # Keep in MEMO
+    memo[(i, j)] = res
+    return res
     
 start = time.time()
 result = editDistance(0, 0)
