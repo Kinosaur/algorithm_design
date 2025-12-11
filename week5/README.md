@@ -246,7 +246,7 @@ python3 minimum_coin_DP.py < ../week3/mincointestcases/mincoin1.in
 
 ## Additional Resources
 
-- **Week5_KaungKhantLin_6540131_542.pdf**: Contains answers to worksheet questions [link](./week5/Week5_KaungKhantLin_6540131_542.pdf)
+- **Week5_KaungKhantLin_6540131_542.pdf**: Contains answers to worksheet questions [link](week5/Week5_KaungKhantLin_6540131_542.pdf)
 - **Performance analysis**: Excel file shows detailed time comparisons for Edit Distance
 - **Test cases**: Extract zip files to access all test cases
 
