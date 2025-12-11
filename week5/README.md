@@ -139,9 +139,20 @@ String_B
 The edit distance problem exhibits optimal substructure:
 
 For strings A[0...i] and B[0...j]:
-- **If A[i] == B[j]**: $editDistance(i, j) = editDistance(i+1, j+1)$
-- **If A[i] ≠ B[j]**:
-  - $editDistance(i, j) = 1 + \min \begin{cases} editDistance(i, j+1) & \text{(insert)} \\ editDistance(i+1, j) & \text{(delete)} \\ editDistance(i+1, j+1) & \text{(substitute)} \end{cases}$
+
+**If A[i] == B[j]** (characters match):
+```
+editDistance(i, j) = editDistance(i+1, j+1)
+```
+
+**If A[i] ≠ B[j]** (characters don't match):
+```
+editDistance(i, j) = 1 + min(
+    editDistance(i, j+1),      // insert
+    editDistance(i+1, j),      // delete
+    editDistance(i+1, j+1)     // substitute
+)
+```
 
 ### Memoization Benefits
 - **Dramatic speedup**: Version 2 is ~12,000x faster on test case 2 (0.315824s → 0.000026s)
@@ -235,7 +246,7 @@ python3 minimum_coin_DP.py < ../week3/mincointestcases/mincoin1.in
 
 ## Additional Resources
 
-- **Week5_KaungKhantLin_6540131_542.pdf**: Contains answers to worksheet questions
+- **Week5_KaungKhantLin_6540131_542.pdf**: Contains answers to worksheet questions [link](/Week5_KaungKhantLin_6540131_542.pdf)
 - **Performance analysis**: Excel file shows detailed time comparisons for Edit Distance
 - **Test cases**: Extract zip files to access all test cases
 
