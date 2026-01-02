@@ -1,0 +1,28 @@
+Expected Outputs for Ultimate Greyness Test Cases
+
+case1.in: 5
+  - Logic: Only one color (3,8). V=3, D=8. |3-8|=5
+
+case2.in: 2
+  - Logic: Pick both colors. V=4*5=20, D=8+10=18. |20-18|=2
+
+case3.in: 1
+  - Logic: Best is items 1,2,3. V=4*1*6=24, D=6+8+9=23. |24-23|=1
+
+case4.in: 10
+  - Logic: Only one color (10,20). V=10, D=20. |10-20|=10
+
+case5.in: 1
+  - Logic: Pick 1 item gives V=2, D=1. |2-1|=1 (minimum)
+
+case6.in: 0
+  - Logic: Only one color (5,5). V=5, D=5. |5-5|=0
+
+case7.in: 4
+  - Logic: Pick item 3 (1,5). V=1, D=5. |1-5|=4
+
+case8.in: 1
+  - Logic: Pick both. V=10*1=10, D=1+8=9. |10-9|=1
+
+case9.in: 95
+  - Logic: Pick one item. V=100, D=5. |100-5|=95
