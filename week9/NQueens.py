@@ -40,6 +40,10 @@ def solve_n_queens(n):
 
         
         col = current_state.column
+        # Copy the current state
+        # Place the queen in the copy
+        # Move to the next column
+        # Put the new state into the queue
         for row in range(n):
             if not is_conflict(current_state.queen_list, col, row):
                 next_state = copy.deepcopy(current_state)
@@ -48,7 +52,7 @@ def solve_n_queens(n):
                 queue.append(next_state)
         
                 
-    return None # No solution founds
+    return None # No solution found
 
 if __name__ == "__main__":
     input_str = input("Enter number of queens (N): ")
