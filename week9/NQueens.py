@@ -30,13 +30,15 @@ def solve_n_queens(n):
     initial_state = State(n)
     
     queue = deque([initial_state])
+    solutions = []
     
     while queue:
         current_state = queue.popleft()
         
         # Check the goal condition
         if current_state.column == n:
-            return current_state.queen_list
+            solutions.append(list(current_state.queen_list))
+            continue
 
         
         col = current_state.column
@@ -51,19 +53,20 @@ def solve_n_queens(n):
                 next_state.column += 1
                 queue.append(next_state)
         
-                
-    return None # No solution found
+    return solutions
 
 if __name__ == "__main__":
     input_str = input("Enter number of queens (N): ")
     N = int(input_str)
         
     print(f"Solving for {N}-Queens...")
-    solution = solve_n_queens(N)
+    solutions = solve_n_queens(N)
     
-    if solution:
-        print(f"Solution for {N}-Queens:")
-        print_queens(solution)
-        print("Raw list:", solution) 
+    if solutions:
+        print(f"Found {len(solutions)} solution(s) for {N}-Queens.")
+        for idx, sol in enumerate(solutions, start=1):
+            print(f"Solution {idx}:")
+            print_queens(sol)
+            print("Raw list:", sol)
     else:
         print(f"No solution found for {N}-Queens.")
