@@ -1,9 +1,4 @@
-# Kaung Khant Lin
-# 6540131
-# 542
-
 from sys import stdin
-from SimplePriorityQueue import SimplePriorityQueue
 
 INF = 10000000000
 V = int(input())
@@ -17,6 +12,7 @@ for line in stdin:
     adj[u].append((v,w))
     adj[v].append((u,w))
 
+from SimplePriorityQueue import SimplePriorityQueue
 
 class State:
     def __init__(self, city, d):
@@ -41,30 +37,16 @@ def cityCompare(x, y):
     return x.d < y.d
 
 # Write UCS code below this line
-pq = SimplePriorityQueue(cityCompare)
 
-# Initial State
-start_node = State(0, 0)
-shortest[0] = 0
-pq.enqueue(start_node)
 
-# Loop until queue is empty
-while not pq.empty():
-    # pop the state with smallest distance
-    s = pq.dequeue()
 
-    # from city 0 to n-1
-    if s.city == V - 1:
-        break
-
-    # Expand the node -> Put successor function
-    neighbors = successor(s)
-
-    # enqueue neighbors
-    for neighbor in neighbors:
-        pq.enqueue(neighbor)
 
 print(s.d)
+
+            
+        
+        
+        
 
 
 
